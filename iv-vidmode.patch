@@ -1,0 +1,14 @@
+--- iv-0.3.6/iv/platforms.ini.orig	2004-04-03 13:08:44.000000000 +0200
++++ iv-0.3.6/iv/platforms.ini	2004-04-20 01:02:33.671912592 +0200
+@@ -380,11 +380,6 @@
+ 		FeatureCFLAGS = -DHAVE_XF86_VIDMODE
+ 		FeatureLIBS = -lXxf86vm
+ 		FeatureLIB_DIR = -L/usr/X11R6/lib/
+-		FeatureDepend = xf86vidmode-lib
+-			DependType = Library
+-			MustExist = Yes
+-			DependPath = libXxf86vm.a
+-			DependGrepString = XF86VidModeQueryExtension
+ 		FeatureDepend = xf86vidmode-devel
+ 			DependType = Header
+ 			MustExist = Yes
