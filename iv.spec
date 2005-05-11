@@ -8,7 +8,7 @@ Group:		X11/Applications/Graphics
 Source0:	ftp://wolfpack.twu.net/users/wolfpack/%{name}-%{version}.tar.bz2
 # Source0-md5:	e129c49d4e5306e9e8a0ad28f3a9abcd
 Patch0:		%{name}-vidmode.patch
-URL:		http://wolfpack.twu.net/utilities.html#iv
+URL: 		http://wolfpack.twu.net/IV/	
 BuildRequires:	gtk+-devel
 BuildRequires:	imlib-devel
 BuildRequires:	libstdc++-devel
