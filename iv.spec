@@ -1,5 +1,5 @@
 Summary:	ImgView - simple GTK+ image viewer using Imlib
-Summary(pl.UTF-8):   ImgView - prosta przeglądarka obrazków oparta na GTK+ i używająca Imliba
+Summary(pl.UTF-8):	ImgView - prosta przeglądarka obrazków oparta na GTK+ i używająca Imliba
 Name:		iv
 Version:	1.4.2
 Release:	1
