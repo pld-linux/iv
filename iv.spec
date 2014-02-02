@@ -1,14 +1,16 @@
 Summary:	ImgView - simple GTK+ image viewer using Imlib
 Summary(pl.UTF-8):	ImgView - prosta przeglądarka obrazków oparta na GTK+ i używająca Imliba
 Name:		iv
-Version:	1.4.2
-Release:	5
-License:	GPL
+Version:	2.6.1
+Release:	1
+License:	GPL v2
 Group:		X11/Applications/Graphics
-Source0:	ftp://wolfpack.twu.net/users/wolfpack/%{name}-%{version}.tar.bz2
-# Source0-md5:	c35e8b210b27acfa5689a8a547eeb947
+Source0:	http://wolfsinger.com/~wolfpack/packages/%{name}-%{version}.tar.bz2
+# Source0-md5:	e18ffd722be6905e69c97d641b5c6839
 Patch0:		%{name}-vidmode.patch
-URL:		http://wolfpack.twu.net/IV/
+Patch1:		%{name}-libpng.patch
+Patch2:		%{name}-verbose.patch
+URL:		http://freecode.com/projects/iv
 BuildRequires:	gtk+-devel
 BuildRequires:	imlib-devel
 BuildRequires:	libpng-devel >= 2:1.4.0
@@ -24,8 +26,8 @@ Prosta przeglądarka obrazków oparta na GTK+ i używająca Imliba.
 %prep
 %setup -q
 %patch0 -p1
-
-%{__sed} -i -e 's/!png_check_sig(sig_buf, 8)/png_sig_cmp(sig_buf, 0, 8)/g' iv/imgiopng.c
+%patch1 -p1
+%patch2 -p1
 
 %build
 ./configure Linux
@@ -51,7 +53,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README
-%attr(755,root,root) %{_bindir}/*
-%{_pixmapsdir}/*.xpm
-%{_mandir}/man1/*.1*
+%doc AUTHORS README
+%attr(755,root,root) %{_bindir}/iv
+%{_pixmapsdir}/iv.xpm
+%{_mandir}/man1/iv.1*
